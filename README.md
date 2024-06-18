@@ -1,3 +1,3 @@
 # SusGameDTO
 
-API version: `0.1`
+[Api Changelog](src/main/kotlin/edu/agh/susgame/dto/CHANGELOG.md)
