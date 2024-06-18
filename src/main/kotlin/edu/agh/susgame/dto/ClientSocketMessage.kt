@@ -8,6 +8,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 sealed class ClientSocketMessage {
+    /**
+     * Used for host configuration, change of selected path or number of packets generated per tick
+     */
     @Serializable
     data class HostDTO(
         val id: Int,
@@ -15,6 +18,9 @@ sealed class ClientSocketMessage {
         val packetsSentPerTick: Int,
     ) : ClientSocketMessage()
 
+    /**
+     * Used when the player wants to update given device
+     */
     @Serializable
     data class UpgradeDTO(
         val deviceId: Int,
