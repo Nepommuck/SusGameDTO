@@ -16,7 +16,6 @@ sealed class ServerSocketMessage {
         val servers: List<ServerDTO>,
         val hosts: List<HostDTO>,
         val edges: List<EdgeDTO>,
-        val packets: List<PacketDTO>,
         val players: List<PlayerDTO>,
         val gameStatus: GameStatus,
     ) : ServerSocketMessage()
