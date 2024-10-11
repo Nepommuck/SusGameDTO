@@ -1,5 +1,6 @@
 package edu.agh.susgame.dto.rest.games
 
+import edu.agh.susgame.dto.rest.games.model.CreateGameApiResult
 import edu.agh.susgame.dto.rest.games.model.GetAllGamesApiResult
 import edu.agh.susgame.dto.rest.games.model.GetGameApiResult
 import edu.agh.susgame.dto.rest.model.LobbyId
@@ -14,5 +15,5 @@ interface GamesRest {
         gameName: String,
         maxNumberOfPlayers: Int,
         gamePin: String? = null,
-    )
+    ): CompletableFuture<CreateGameApiResult>
 }
