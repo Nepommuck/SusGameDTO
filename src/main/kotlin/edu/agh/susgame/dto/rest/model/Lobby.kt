@@ -1,5 +1,6 @@
 package edu.agh.susgame.dto.rest.model
 
+
 data class LobbyId(val value: Int)
 
 data class Lobby(
