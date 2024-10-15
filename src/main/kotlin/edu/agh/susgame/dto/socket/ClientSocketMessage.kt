@@ -1,6 +1,6 @@
-package edu.agh.susgame.dto
+package edu.agh.susgame.dto.socket
 
-import edu.agh.susgame.dto.common.GameStatus
+import edu.agh.susgame.dto.socket.common.GameStatus
 import kotlinx.serialization.Serializable
 
 /**
