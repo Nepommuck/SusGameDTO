@@ -12,5 +12,5 @@ data class Lobby(
     val name: String,
     val maxNumOfPlayers: Int,
     val gameTime: Int,
-    val playersWaiting: List<Player>,
+    val playersWaiting: List<PlayerREST>,
 )
