@@ -41,4 +41,10 @@ sealed class ClientSocketMessage {
     data class ChatMessage(
         val message: String,
     ) : ClientSocketMessage()
+
+    @Serializable
+    data class QuizAnswerDTO(
+        val questionId: Int,
+        val answer: Int,
+    ) : ClientSocketMessage()
 }
