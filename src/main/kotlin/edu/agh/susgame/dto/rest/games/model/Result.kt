@@ -23,10 +23,10 @@ sealed class GetGameMapApiResult(responseCode: Int) : ApiResult(responseCode) {
     data class Success(
         val nodes: List<GameMapNodeDTO>,
         val edges: List<GameMapEdgeDTO>,
-    ) : CreateGameApiResult(HttpURLConnection.HTTP_CREATED)
+    ) : GetGameMapApiResult(HttpURLConnection.HTTP_CREATED)
 
-    data object GameDoesNotExist : CreateGameApiResult(HttpURLConnection.HTTP_NOT_FOUND)
-    data object OtherError : CreateGameApiResult(HttpURLConnection.HTTP_INTERNAL_ERROR)
+    data object GameDoesNotExist : GetGameMapApiResult(HttpURLConnection.HTTP_NOT_FOUND)
+    data object OtherError : GetGameMapApiResult(HttpURLConnection.HTTP_INTERNAL_ERROR)
 }
 
 sealed class CreateGameApiResult(responseCode: Int) : ApiResult(responseCode) {
