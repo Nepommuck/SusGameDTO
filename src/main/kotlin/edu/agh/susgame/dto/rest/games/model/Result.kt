@@ -3,8 +3,8 @@ package edu.agh.susgame.dto.rest.games.model
 import edu.agh.susgame.dto.rest.ApiResult
 import edu.agh.susgame.dto.rest.model.Lobby
 import edu.agh.susgame.dto.rest.model.LobbyId
-import edu.agh.susgame.dto.socket.server.map.GameMapEdgeDTO
-import edu.agh.susgame.dto.socket.server.map.GameMapNodeDTO
+import edu.agh.susgame.dto.rest.model.GameMapEdgeDTO
+import edu.agh.susgame.dto.rest.model.GameMapNodeDTO
 import java.net.HttpURLConnection
 
 
