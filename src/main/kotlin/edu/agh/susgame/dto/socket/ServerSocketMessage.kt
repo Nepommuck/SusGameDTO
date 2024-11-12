@@ -14,9 +14,9 @@ sealed class ServerSocketMessage {
      */
     @Serializable
     data class GameState(
-        val host: HostDTO,
         val routers: List<RouterDTO>,
-        val servers: List<ServerDTO>,
+        val hosts: List<HostDTO>,
+        val server: ServerDTO,
         val edges: List<EdgeDTO>,
         val players: List<PlayerDTO>,
         val gameStatus: GameStatus,
