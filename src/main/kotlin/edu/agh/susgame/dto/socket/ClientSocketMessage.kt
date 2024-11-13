@@ -58,7 +58,8 @@ sealed class ClientSocketMessage {
      * Used for handling player changing state in lobby
      */
     @Serializable
-    data class PlayerChangeReadinessRequest(
+    data class PlayerChangeReadynessRequest(
+        val playerId: Int,
         val state: Boolean
     ) : ClientSocketMessage()
 

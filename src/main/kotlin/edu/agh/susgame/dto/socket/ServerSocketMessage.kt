@@ -47,9 +47,6 @@ sealed class ServerSocketMessage {
         val correctAnswer: Int,
     ) : ServerSocketMessage()
 
-    /**
-     * Used for handling new player joining to lobby
-     */
     @Serializable
     data class PlayerJoiningResponse(
         val playerId: Int,
@@ -61,6 +58,7 @@ sealed class ServerSocketMessage {
      */
     @Serializable
     data class PlayerChangeReadinessResponse(
+        val playerId: Int,
         val state: Boolean
     ) : ServerSocketMessage()
 
