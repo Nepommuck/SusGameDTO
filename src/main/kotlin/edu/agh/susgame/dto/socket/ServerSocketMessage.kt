@@ -51,7 +51,7 @@ sealed class ServerSocketMessage {
      * Used for handling new player joining to lobby
      */
     @Serializable
-    data class PlayerJoining(
+    data class PlayerJoiningResponse(
         val playerId: Int,
         val playerName: String
     ) : ClientSocketMessage()
@@ -60,8 +60,7 @@ sealed class ServerSocketMessage {
      * Used for handling player changing state in lobby
      */
     @Serializable
-    data class PlayerChangingState(
-        val playerId: Int,
+    data class PlayerChangeReadynessResponse(
         val state: Boolean
     ) : ClientSocketMessage()
 
@@ -69,7 +68,7 @@ sealed class ServerSocketMessage {
      * Used for handling player leaving lobby
      */
     @Serializable
-    data class PlayerLeaving(
+    data class PlayerLeavingResponse(
         val playerId: Int
     ) : ClientSocketMessage()
 }

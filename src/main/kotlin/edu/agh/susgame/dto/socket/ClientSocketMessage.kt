@@ -47,4 +47,27 @@ sealed class ClientSocketMessage {
         val questionId: Int,
         val answer: Int,
     ) : ClientSocketMessage()
+
+    @Serializable
+    data class PlayerJoiningRequest(
+        val playerId: Int,
+        val playerName: String
+    ) : ClientSocketMessage()
+
+    /**
+     * Used for handling player changing state in lobby
+     */
+    @Serializable
+    data class PlayerChangeReadynessRequest(
+        val state: Boolean
+    ) : ClientSocketMessage()
+
+    /**
+     * Used for handling player leaving lobby
+     */
+    @Serializable
+    data class PlayerLeavingRequest(
+        val playerId: Int
+    ) : ClientSocketMessage()
+
 }
