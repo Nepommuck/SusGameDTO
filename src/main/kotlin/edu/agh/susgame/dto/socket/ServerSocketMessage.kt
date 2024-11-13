@@ -54,7 +54,7 @@ sealed class ServerSocketMessage {
     data class PlayerJoiningResponse(
         val playerId: Int,
         val playerName: String
-    ) : ClientSocketMessage()
+    ) : ServerSocketMessage()
 
     /**
      * Used for handling player changing state in lobby
@@ -62,7 +62,7 @@ sealed class ServerSocketMessage {
     @Serializable
     data class PlayerChangeReadinessResponse(
         val state: Boolean
-    ) : ClientSocketMessage()
+    ) : ServerSocketMessage()
 
     /**
      * Used for handling player leaving lobby
@@ -70,5 +70,5 @@ sealed class ServerSocketMessage {
     @Serializable
     data class PlayerLeavingResponse(
         val playerId: Int
-    ) : ClientSocketMessage()
+    ) : ServerSocketMessage()
 }
