@@ -46,4 +46,30 @@ sealed class ServerSocketMessage {
         val answers: List<String>,
         val correctAnswer: Int,
     ) : ServerSocketMessage()
+
+    /**
+     * Used for handling new player joining to lobby
+     */
+    @Serializable
+    data class PlayerJoining(
+        val playerId: Int,
+        val playerName: String
+    ) : ClientSocketMessage()
+
+    /**
+     * Used for handling player changing state in lobby
+     */
+    @Serializable
+    data class PlayerChangingState(
+        val playerId: Int,
+        val state: Boolean
+    ) : ClientSocketMessage()
+
+    /**
+     * Used for handling player leaving lobby
+     */
+    @Serializable
+    data class PlayerLeaving(
+        val playerId: Int
+    ) : ClientSocketMessage()
 }
