@@ -12,7 +12,8 @@ sealed class ServerSocketMessage {
     @Serializable
     data class IdConfig(
         val id: Int
-    )
+    ) : ServerSocketMessage()
+
     /**
      * Information about the whole game state that is coming periodically from the server
      */
