@@ -9,17 +9,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 sealed class ServerSocketMessage {
-    @Serializable
-    data class IdConfig(
-        val id: Int
-    ) : ServerSocketMessage()
-    /**
-     *
-     */
-    @Serializable
-    data class GameStarted(
-        val id: Int
-    ) : ServerSocketMessage()
     /**
      * Informs the client about its ID
      */
@@ -35,6 +24,7 @@ sealed class ServerSocketMessage {
     data class GameStarted(
         val id: Int
     ) : ServerSocketMessage()
+
     /**
      * Information about the whole game state that is coming periodically from the server
      */
