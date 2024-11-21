@@ -21,6 +21,21 @@ sealed class ServerSocketMessage {
         val id: Int
     ) : ServerSocketMessage()
     /**
+     * Informs the client about its ID
+     */
+    @Serializable
+    data class IdConfig(
+        val id: Int
+    ) : ServerSocketMessage()
+
+    /**
+     *
+     */
+    @Serializable
+    data class GameStarted(
+        val id: Int
+    ) : ServerSocketMessage()
+    /**
      * Information about the whole game state that is coming periodically from the server
      */
     @Serializable
