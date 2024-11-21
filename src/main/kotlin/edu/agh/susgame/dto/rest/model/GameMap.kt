@@ -6,8 +6,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class GameMapDTO(
     val server: GameMapServerDTO,
-    val host: List<GameMapHostDTO>,
-    val router: List<GameMapRouterDTO>,
+    val hosts: List<GameMapHostDTO>,
+    val routers: List<GameMapRouterDTO>,
     val edges: List<GameMapEdgeDTO>,
 )
 
