@@ -5,7 +5,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class GameMapDTO(
-    val nodes: List<GameMapNodeDTO>,
+    val server: GameMapServerDTO,
+    val host: List<GameMapHostDTO>,
+    val router: List<GameMapRouterDTO>,
     val edges: List<GameMapEdgeDTO>,
 )
 
@@ -14,24 +16,23 @@ data class Coordinates(val x: Int, val y: Int)
 
 
 @Serializable
-sealed class GameMapNodeDTO {
-    abstract val id: Int
-    abstract val coordinates: Coordinates
+sealed class GameMapServerDTO(
+    val id: Int,
+    val coordinates: Coordinates,
+)
 
-    @Serializable
-    data class Server(override val id: Int, override val coordinates: Coordinates) : GameMapNodeDTO()
+@Serializable
+sealed class GameMapHostDTO(
+    val id: Int,
+    val coordinates: Coordinates,
+)
 
-    @Serializable
-    data class Host(override val id: Int, override val coordinates: Coordinates) : GameMapNodeDTO()
-
-    @Serializable
-    data class Router(
-        override val id: Int,
-        override val coordinates: Coordinates,
-        val bufferSize: Int
-    ) : GameMapNodeDTO()
-}
-
+@Serializable
+sealed class GameMapRouterDTO(
+    val id: Int,
+    val coordinates: Coordinates,
+    val bufferSize: Int
+)
 
 @Serializable
 data class GameMapEdgeDTO(val from: Int, val to: Int, val weight: Int)
