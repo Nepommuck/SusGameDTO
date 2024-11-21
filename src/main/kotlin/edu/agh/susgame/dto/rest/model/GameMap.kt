@@ -4,6 +4,12 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
+data class GameMapDTO(
+    val nodes: List<GameMapNodeDTO>,
+    val edges: List<GameMapEdgeDTO>,
+)
+
+@Serializable
 data class Coordinates(val x: Int, val y: Int)
 
 
