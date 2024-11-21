@@ -16,22 +16,22 @@ data class Coordinates(val x: Int, val y: Int)
 
 
 @Serializable
-sealed class GameMapServerDTO(
+data class GameMapServerDTO(
     val id: Int,
     val coordinates: Coordinates,
 )
 
 @Serializable
-sealed class GameMapHostDTO(
+data class GameMapHostDTO(
     val id: Int,
     val coordinates: Coordinates,
 )
 
 @Serializable
-sealed class GameMapRouterDTO(
+data class GameMapRouterDTO(
     val id: Int,
     val coordinates: Coordinates,
-    val bufferSize: Int
+    val bufferSize: Int,
 )
 
 @Serializable
