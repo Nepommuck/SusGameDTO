@@ -18,13 +18,12 @@ sealed class ServerSocketMessage {
     ) : ServerSocketMessage()
 
     /**
-     * Pass information that given game has started
+     *
      */
     @Serializable
     data class GameStarted(
         val id: Int
     ) : ServerSocketMessage()
-
     /**
      * Information about the whole game state that is coming periodically from the server
      */
