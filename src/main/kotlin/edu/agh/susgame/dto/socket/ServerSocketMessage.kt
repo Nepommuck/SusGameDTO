@@ -18,7 +18,7 @@ sealed class ServerSocketMessage {
     ) : ServerSocketMessage()
 
     /**
-     *
+     * Pass information that given game has started
      */
     @Serializable
     data class GameStarted(
