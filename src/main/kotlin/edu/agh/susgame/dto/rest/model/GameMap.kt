@@ -21,7 +21,6 @@ data class Coordinates(val x: Int, val y: Int)
 data class GameMapServerDTO(
     val id: Int,
     val coordinates: Coordinates,
-
 )
 
 @Serializable
