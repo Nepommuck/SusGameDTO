@@ -9,6 +9,8 @@ data class GameMapDTO(
     val hosts: List<GameMapHostDTO>,
     val routers: List<GameMapRouterDTO>,
     val edges: List<GameMapEdgeDTO>,
+    val gameTime: Long, //in milliseconds
+    val gameGoal: Int, //number of packets that server must receive to win
 )
 
 @Serializable
@@ -19,6 +21,7 @@ data class Coordinates(val x: Int, val y: Int)
 data class GameMapServerDTO(
     val id: Int,
     val coordinates: Coordinates,
+
 )
 
 @Serializable
