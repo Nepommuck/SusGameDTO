@@ -9,7 +9,6 @@ data class GameMapDTO(
     val hosts: List<GameMapHostDTO>,
     val routers: List<GameMapRouterDTO>,
     val edges: List<GameMapEdgeDTO>,
-    val gameTime: Long, //in milliseconds
     val gameGoal: Int, //number of packets that server must receive to win
 )
 
