@@ -1,5 +1,6 @@
 package edu.agh.susgame.dto.socket
 
+import edu.agh.susgame.dto.common.ColorDTO
 import edu.agh.susgame.dto.socket.common.GameStatus
 import kotlinx.serialization.Serializable
 
@@ -68,7 +69,7 @@ sealed class ClientSocketMessage {
     @Serializable
     data class PlayerChangeColor(
         val playerId: Int,
-        val color: ULong
+        val color: ColorDTO,
     ) : ClientSocketMessage()
 
     /**
