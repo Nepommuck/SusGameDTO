@@ -7,6 +7,9 @@ import kotlinx.serialization.Serializable
 data class LobbyId(val value: Int)
 
 @Serializable
+data class LobbyPin(val value: String)
+
+@Serializable
 data class LobbyRow(
     val id: LobbyId,
     val name: String,

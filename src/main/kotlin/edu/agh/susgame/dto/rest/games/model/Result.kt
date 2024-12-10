@@ -20,6 +20,8 @@ sealed class GetGameApiResult(responseCode: Int) : ApiResult(responseCode) {
 
     data object DoesNotExist : GetGameApiResult(HttpURLConnection.HTTP_NOT_FOUND)
 
+    data object InvalidPin : GetGameApiResult(HttpURLConnection.HTTP_UNAUTHORIZED)
+
     data object OtherError : GetGameApiResult(HttpURLConnection.HTTP_INTERNAL_ERROR)
 }
 
