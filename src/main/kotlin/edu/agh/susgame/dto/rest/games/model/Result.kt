@@ -2,20 +2,21 @@ package edu.agh.susgame.dto.rest.games.model
 
 import edu.agh.susgame.dto.rest.ApiResult
 import edu.agh.susgame.dto.rest.model.GameMapDTO
-import edu.agh.susgame.dto.rest.model.Lobby
+import edu.agh.susgame.dto.rest.model.LobbyDetails
 import edu.agh.susgame.dto.rest.model.LobbyId
+import edu.agh.susgame.dto.rest.model.LobbyRow
 import java.net.HttpURLConnection
 
 
 sealed class GetAllGamesApiResult(responseCode: Int) : ApiResult(responseCode) {
-    data class Success(val lobbies: List<Lobby>) : GetAllGamesApiResult(HttpURLConnection.HTTP_OK)
+    data class Success(val lobbies: List<LobbyRow>) : GetAllGamesApiResult(HttpURLConnection.HTTP_OK)
 
     data object Error : GetAllGamesApiResult(HttpURLConnection.HTTP_INTERNAL_ERROR)
 }
 
 
 sealed class GetGameApiResult(responseCode: Int) : ApiResult(responseCode) {
-    data class Success(val lobby: Lobby) : GetGameApiResult(HttpURLConnection.HTTP_OK)
+    data class Success(val lobby: LobbyDetails) : GetGameApiResult(HttpURLConnection.HTTP_OK)
 
     data object DoesNotExist : GetGameApiResult(HttpURLConnection.HTTP_NOT_FOUND)
 
