@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture
 interface GamesRest {
     fun getAllGames(): CompletableFuture<GetAllGamesApiResult>
 
-    fun getGameDetails(gameId: LobbyId, gamePin: LobbyPin?): CompletableFuture<GetGameApiResult>
+    fun getGameDetails(gameId: LobbyId, gamePin: LobbyPin): CompletableFuture<GetGameApiResult>
 
     fun getGameMap(gameId: LobbyId): CompletableFuture<GetGameMapApiResult>
 
